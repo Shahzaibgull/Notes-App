@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".NotesMainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFAC30"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/gender"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select"
+            app:hintTextColor="@color/black"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:textColorHint="#828080"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeWidthFocused="3.5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pinCode2"
+            app:layout_constraintVertical_bias="0.060000002">
+
+            <AutoCompleteTextView
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:ignore="LabelFor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/view1"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/appColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/SearchBackID"
+        android:visibility="gone"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="@+id/searchBar"
+        app:layout_constraintEnd_toStartOf="@+id/searchBar"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toEndOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="@+id/view1"
+        app:layout_constraintVertical_bias="0.68" />
+
+    <SearchView
+        android:id="@+id/searchBar"
+        android:visibility="gone"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@drawable/common_background1"
+        android:elevation="10dp"
+        android:focusable="false"
+        app:closeIcon="@drawable/baseline_cancel_24"
+        app:iconifiedByDefault="false"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintEnd_toStartOf="@+id/view1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/SearchBackID"
+        app:layout_constraintTop_toTopOf="@+id/view1"
+        app:queryHint="Search..."
+        app:searchHintIcon="@null"
+        app:searchIcon="@drawable/baseline_search_24" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="62dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="TODO"
+        android:focusable="true"
+        android:src="@drawable/baseline_add_24"
+        app:backgroundTint="@color/appColor"
+        app:borderWidth="0dp"
+        app:elevation="10dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.95" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
